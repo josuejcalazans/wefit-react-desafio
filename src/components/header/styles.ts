@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
     color: ${({ theme }) => theme.colors.white};
   }
 `
-export const CartButton = styled.button`
+export const CartButton = styled.div`
   display: flex;
   align-items: center;
   gap: 1.1rem;
