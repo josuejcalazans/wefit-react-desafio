@@ -1,12 +1,16 @@
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
+import { Header } from './components/header'
+import { LayoutContainer } from './components/layout'
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
-      <h1>Hello World</h1>
+      <LayoutContainer>
+        <Header />
+      </LayoutContainer>
     </ThemeProvider>
   )
 }
