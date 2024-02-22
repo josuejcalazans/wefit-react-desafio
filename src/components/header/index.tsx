@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { CartButton, HeaderContainer } from './styles'
-import cartSvg from '../../assets/icons/cart.svg'
+import bagSvg from '../../assets/icons/bag.svg'
 export function Header() {
   return (
     <HeaderContainer>
@@ -14,7 +14,7 @@ export function Header() {
             <p>Meu Carrinho</p>
             <span>0 items</span>
           </div>
-          <img src={cartSvg} alt="Meu carrinho" />
+          <img src={bagSvg} alt="Meu carrinho" />
         </CartButton>
       </Link>
     </HeaderContainer>

@@ -7,15 +7,23 @@ interface StyledButtonProps {
 }
 
 export const StyledButton = styled.button<StyledButtonProps>`
+  width: ${({ width }) => width || '100%'};
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.2rem;
+  padding: 0.8rem;
+  cursor: pointer;
 
-  width: ${({ width }) => width || '100%'};
-  font-size: ${({ fontSize }) => fontSize || '1.2rem'};
+  background-color: ${({ theme, active }) =>
+    active ? theme.colors.green : theme.colors.blue};
+  border: none;
   border-radius: 4px;
-  padding: 0 1.6rem;
-  height: 4rem;
+
+  font-size: ${({ fontSize }) => fontSize || '1.2rem'};
+  color: ${({ theme }) => theme.colors.white};
+  text-align: center;
   text-transform: uppercase;
 
   transition: filter 0.2s;
@@ -23,7 +31,26 @@ export const StyledButton = styled.button<StyledButtonProps>`
     filter: brightness(0.9);
   }
 
-  background-color: ${({ theme, active }) =>
-    active ? theme.colors.green : theme.colors.blue};
-  color: ${({ theme }) => theme.colors.white};
+  div {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+
+    img {
+      aspect-ratio: 1;
+      object-fit: cover;
+      width: auto;
+    }
+  }
+`
+
+export const Icon = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    width: auto;
+  }
 `

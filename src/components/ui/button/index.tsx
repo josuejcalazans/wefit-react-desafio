@@ -1,9 +1,10 @@
 import { ButtonHTMLAttributes } from 'react'
-import { StyledButton } from './styles'
-
+import { Icon, StyledButton } from './styles'
+import cartSvg from '../../../assets/icons/plus.svg'
 interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'active'> {
-  active: boolean
+  active?: boolean
+  hasIcon?: boolean
   width?: string
   fontSize?: string
 }
@@ -12,36 +13,19 @@ export function Button({
   width,
   fontSize,
   active = false,
+  hasIcon = false,
   children,
   ...rest
 }: ButtonProps) {
   return (
     <StyledButton active={active} width={width} fontSize={fontSize} {...rest}>
+      {hasIcon && (
+        <Icon>
+          <img src={cartSvg} alt="Meu carrinho" />
+        </Icon>
+      )}
+
       {children}
     </StyledButton>
   )
 }
-
-// import React, { ButtonHTMLAttributes } from 'react'
-// import { StyledButton } from 'seu-caminho/StyledButton' // Importe o StyledButton ou ajuste conforme necessário
-
-// interface ButtonProps
-//   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'active'> {
-//   active: boolean
-//   width?: string
-//   fontSize?: string
-// }
-
-// export function Button({
-//   width = '100%',
-//   fontSize = '1.2rem',
-//   active = false,
-//   children,
-//   ...rest
-// }: ButtonProps) {
-//   return (
-//     <StyledButton active={active} width={width} fontSize={fontSize} {...rest}>
-//       {children}
-//     </StyledButton>
-//   )
-// }
