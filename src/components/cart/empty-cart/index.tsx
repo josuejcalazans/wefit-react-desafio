@@ -1,7 +1,10 @@
-import emptyImg from '../../assets/icons/empty.svg'
-import { Button } from '../../components/ui/button'
 import { useNavigate } from 'react-router-dom'
-import { CardContainer } from '../../components/ui/cardContainer'
+
+import emptyImg from '../../../assets/icons/empty.svg'
+
+import { CardContainer } from '../../ui/card-container'
+import { Button } from '../../ui/button'
+
 export function EmptyCart() {
   const navigate = useNavigate()
   return (

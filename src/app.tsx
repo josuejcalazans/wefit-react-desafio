@@ -7,10 +7,6 @@ import { Router } from './router'
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      {/* <GlobalStyle />
-      <>
-        <Router />
-      </> */}
       <BrowserRouter>
         <GlobalStyle />
         <Router />

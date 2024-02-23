@@ -46,3 +46,7 @@ export const CardContainer = styled.div`
     }
   }
 `
+
+export const ProductQuantity = styled.span`
+  font-weight: 400;
+`

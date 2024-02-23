@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useProductStore } from '../../store/productsStore'
 import { Loader } from '../../components/ui/loader/inde'
 
-import { CardsList } from '../../components/cardsList'
+import { CardsList } from '../../components/cards-list'
 export function Home() {
   const { fetchProducts, products, loading } = useProductStore()
 

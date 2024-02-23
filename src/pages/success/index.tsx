@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { CardContainer } from '../../components/ui/cardContainer'
+import { CardContainer } from '../../components/ui/card-container'
 import { Button } from '../../components/ui/button'
 import confirmSvg from '../../assets/icons/confirm.svg'
 export function Success() {

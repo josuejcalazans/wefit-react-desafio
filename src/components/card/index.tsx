@@ -1,12 +1,18 @@
 import { Product } from '../../@types/products.types'
+import { useCartStore } from '../../store/cartStore'
 import { formatCurrency } from '../../utils/formatCurrency'
 import { Button } from '../ui/button'
-import { CardContainer } from './styles'
+import { CardContainer, ProductQuantity } from './styles'
 
 interface CardProps {
   product: Product
 }
 export function Card({ product }: CardProps) {
+  const { addToCart, cart } = useCartStore()
+  const cartItem = cart.find((item) => item.id === product.id)
+  const quantity = cartItem ? cartItem.quantity : 0
+
+  const TextButton = quantity > 0 ? 'ITEM ADICIONADO' : 'ADICIONAR AO CARRINHO'
   return (
     <CardContainer>
       <div>
@@ -18,15 +24,14 @@ export function Card({ product }: CardProps) {
 
         <p>{formatCurrency(product.price)}</p>
       </div>
-
       <Button
         type="button"
-        active={false}
         hasIcon
-        // onClick={handleAddProduct}
-        // disabled={hasCurrentProduct !== 0}
+        onClick={() => addToCart(product)}
+        active={quantity > 0}
       >
-        Adicionar ao carrinho
+        <ProductQuantity>{quantity}</ProductQuantity>
+        {TextButton}
       </Button>
     </CardContainer>
   )

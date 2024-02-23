@@ -20,7 +20,7 @@ export const CardContainer = styled.main`
 
   @media (max-width: 480px) {
     padding: 0 1.6rem;
-    background-color: red;
+
     margin-bottom: 1.6rem;
   }
 
