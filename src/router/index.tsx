@@ -3,7 +3,7 @@ import { DefaultLayout } from '../components/default-layout'
 import { Home } from '../pages/home'
 import { Cart } from '../pages/cart'
 import { Success } from '../pages/success'
-import { NotFound } from '../pages/notFound'
+import { NotFound } from '../pages/not-found'
 export function Router() {
   return (
     <>

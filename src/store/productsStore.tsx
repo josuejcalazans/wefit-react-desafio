@@ -1,13 +1,8 @@
 import { create } from 'zustand'
 
 import { ProductsService } from '../service/productsService'
+import { Product } from '../@types/products.types'
 
-interface Product {
-  id: number
-  title: string
-  price: number
-  image: string
-}
 export interface ProductsState {
   products: Product[]
   loading: boolean
