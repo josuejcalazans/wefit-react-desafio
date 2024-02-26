@@ -5,7 +5,7 @@ import { Button } from '../ui/button'
 import { CardContainer, ProductQuantity } from './styles'
 
 interface CardProps {
-  product: Product
+  product: Product & { quantity: number; subtotal: number }
 }
 export function Card({ product }: CardProps) {
   const { addToCart, cart } = useCartStore()
@@ -13,6 +13,7 @@ export function Card({ product }: CardProps) {
   const quantity = cartItem ? cartItem.quantity : 0
 
   const TextButton = quantity > 0 ? 'ITEM ADICIONADO' : 'ADICIONAR AO CARRINHO'
+
   return (
     <CardContainer>
       <div>

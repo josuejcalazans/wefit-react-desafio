@@ -9,7 +9,7 @@ export function CardsList() {
   return (
     <CardsListContainer>
       {products.map((prod: Product) => (
-        <Card key={prod.id} product={prod} />
+        <Card key={prod.id} product={{ ...prod, quantity: 0, subtotal: 0 }} />
       ))}
     </CardsListContainer>
   )

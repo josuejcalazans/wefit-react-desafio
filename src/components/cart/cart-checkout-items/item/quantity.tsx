@@ -5,7 +5,7 @@ import { useCartStore } from '../../../../store/cartStore'
 import { SectionQuantity } from './styles'
 
 interface QuantityProps {
-  product: Product
+  product: Product & { quantity: number; subtotal: number }
 }
 
 export function Quantity({ product }: QuantityProps) {

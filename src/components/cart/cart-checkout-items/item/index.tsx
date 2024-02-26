@@ -8,7 +8,7 @@ import { Quantity } from './quantity'
 import { ItemContainer, Subtotal } from './styles'
 
 interface ItemProps {
-  product: Product
+  product: Product & { quantity: number; subtotal: number }
 }
 
 export function Item({ product }: ItemProps) {

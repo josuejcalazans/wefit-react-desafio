@@ -1,9 +1,14 @@
 import { create } from 'zustand'
 
-import { Product } from '../@types/products.types'
 import { ProductsService } from '../service/productsService'
 
-export interface ProductsStae {
+interface Product {
+  id: number
+  title: string
+  price: number
+  image: string
+}
+export interface ProductsState {
   products: Product[]
   loading: boolean
 }
@@ -12,9 +17,9 @@ type ProductActions = {
   fetchProducts: () => Promise<void>
 }
 
-export type ProductStore = ProductActions & ProductsStae
+export type ProductStore = ProductActions & ProductsState
 
-const initialState: ProductsStae = {
+const initialState: ProductsState = {
   loading: true,
   products: [],
 }
@@ -22,15 +27,20 @@ const initialState: ProductsStae = {
 export const useProductStore = create<ProductStore>((set) => ({
   ...initialState,
   fetchProducts: async () => {
-    const response = await ProductsService.getAll()
-    await timeout(1200)
-    const products = response.data
+    try {
+      const response = await ProductsService.getAll()
+      await timeout(1200)
 
-    set((state) => ({
-      ...state,
-      products,
-      loading: false,
-    }))
+      const products: Product[] = response.data
+
+      set((state) => ({
+        ...state,
+        products,
+        loading: false,
+      }))
+    } catch (error) {
+      console.error('Error fetching products:', error)
+    }
   },
 }))
 

@@ -5,6 +5,7 @@ export const TrashButtonContainer = styled.button`
   background-color: transparent;
   line-height: 0;
   width: 1.6rem;
+  cursor: pointer;
   img {
     aspect-ratio: 1;
     object-fit: cover;

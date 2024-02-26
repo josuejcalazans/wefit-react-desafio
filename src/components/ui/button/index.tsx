@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react'
 import { Icon, StyledButton } from './styles'
-import cartSvg from '../../../assets/icons/plus.svg'
+import cartSvg from '../../../assets/icons/cart.svg'
 interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'active'> {
   active?: boolean
